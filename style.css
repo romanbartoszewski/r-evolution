@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@300;400;500&display=swap');
+
+:root {
+    --bg:         #0c0c0c;
+    --bg-raised:  #111111;
+    --border:     #2a2a2a;
+    --text:       #b4b4b4;
+    --text-dim:   #666666;
+    --text-head:  #ddd8d0;
+    --accent:     #9a8870;
+    --accent-dim: #5a4e40;
+    --link:       #b4a898;
+    --link-hover: #e0d8cc;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'EB Garamond', Georgia, serif;
+    line-height: 1.85;
+    padding: 6vh 5vw;
+    min-height: 100vh;
+}
+
+/* ── Layout ── */
+
+.page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 3rem 0 6rem;
+}
+
+/* ── Typography ── */
+
+h1, h2, h3 {
+    font-family: 'Cormorant SC', 'EB Garamond', serif;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--text-head);
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+h2 {
+    font-size: 1.15rem;
+    margin: 2.8rem 0 1rem;
+    color: var(--accent);
+}
+
+p {
+    margin-bottom: 1.4rem;
+    text-align: justify;
+    hyphens: auto;
+}
+
+em {
+    font-style: italic;
+    color: var(--text-head);
+}
+
+strong {
+    font-weight: 600;
+    color: var(--text-head);
+}
+
+/* ── Quote block ── */
+
+blockquote {
+    margin: 2rem 0;
+    padding: 1.2rem 1.6rem;
+    border-left: 2px solid var(--accent-dim);
+    background: var(--bg-raised);
+    color: var(--text-dim);
+    font-style: italic;
+    font-size: 1.05rem;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    font-style: normal;
+    letter-spacing: 0.05em;
+}
+
+/* ── Calculation / annotation block ── */
+
+.nota {
+    margin: 2.5rem 0;
+    padding: 1.4rem 1.8rem;
+    border: 1px solid var(--border);
+    background: var(--bg-raised);
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+.nota .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dim);
+}
+
+.nota .row:last-child {
+    border-bottom: none;
+}
+
+.nota .row .label {
+    color: var(--text);
+    flex: 1;
+}
+
+.nota .row .val {
+    font-family: 'Courier New', monospace;
+    font-size: 0.88rem;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+.nota .nota-title {
+    font-family: 'Cormorant SC', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+/* ── Navigation ── */
+
+nav {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 2rem;
+}
+
+nav a {
+    color: var(--link);
+    text-decoration: none;
+    font-family: 'Cormorant SC', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--link-hover);
+}
+
+nav a::before {
+    content: '· ';
+    color: var(--accent-dim);
+}
+
+/* ── Footer status ── */
+
+footer {
+    margin-top: 5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+    line-height: 1.9;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 600px) {
+    html { font-size: 16px; }
+    body { padding: 4vh 6vw; }
+    h1   { font-size: 1.3rem; }
+}
